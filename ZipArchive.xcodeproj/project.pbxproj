@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		D70DAEEB2A11E78000BF2911 /* ZipArchive.m in Sources */ = {isa = PBXBuildFile; fileRef = D70DAEEA2A11E78000BF2911 /* ZipArchive.m */; };
 		D70DAEEC2A11E78000BF2911 /* ZipArchive.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = D70DAEE92A11E78000BF2911 /* ZipArchive.h */; };
+		D7C3C7292C46D4D000C545C7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7C3C7282C46D4D000C545C7 /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,6 +29,7 @@
 		D70DAEE62A11E78000BF2911 /* libZipArchive.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libZipArchive.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		D70DAEE92A11E78000BF2911 /* ZipArchive.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZipArchive.h; sourceTree = "<group>"; };
 		D70DAEEA2A11E78000BF2911 /* ZipArchive.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZipArchive.m; sourceTree = "<group>"; };
+		D7C3C7282C46D4D000C545C7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D7C3C7292C46D4D000C545C7 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -46,6 +49,7 @@
 			children = (
 				D70DAEE82A11E78000BF2911 /* ZipArchive */,
 				D70DAEE72A11E78000BF2911 /* Products */,
+				D7C3C7272C46D4D000C545C7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +68,14 @@
 				D70DAEEA2A11E78000BF2911 /* ZipArchive.m */,
 			);
 			path = ZipArchive;
+			sourceTree = "<group>";
+		};
+		D7C3C7272C46D4D000C545C7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D7C3C7282C46D4D000C545C7 /* Foundation.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

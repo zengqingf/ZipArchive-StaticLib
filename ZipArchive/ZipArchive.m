@@ -1,13 +1,13 @@
 //
-//  BlankStaticDemo.m
-//  BlankStaticDemo
+//  ZipArchive.m
+//  ZipArchive
 //
 //  Created by dev on 2023/5/15.
 //  Copyright © 2023 dev. All rights reserved.
 //
 
-#import "BlankStaticDemo.h"
+#import "ZipArchive.h"
 
-@implementation BlankStaticDemo
+@implementation ZipArchive
 
 @end
