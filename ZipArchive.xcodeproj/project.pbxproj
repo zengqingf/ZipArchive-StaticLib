@@ -27,6 +27,9 @@
 		D7C3C7612C46D56E00C545C7 /* SSZipCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = D7C3C74E2C46D52A00C545C7 /* SSZipCommon.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D7C3C7622C46D57000C545C7 /* SSZipArchive.h in Headers */ = {isa = PBXBuildFile; fileRef = D7C3C74C2C46D52A00C545C7 /* SSZipArchive.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D7C3C7632C46D57400C545C7 /* ZipArchive.h in Headers */ = {isa = PBXBuildFile; fileRef = D7C3C72A2C46D52A00C545C7 /* ZipArchive.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D7C3C7652C46D67700C545C7 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7C3C7642C46D67700C545C7 /* Security.framework */; };
+		D7C3C7672C46D67E00C545C7 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D7C3C7662C46D67E00C545C7 /* libz.tbd */; };
+		D7C3C7692C46D68500C545C7 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D7C3C7682C46D68500C545C7 /* libiconv.tbd */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -77,6 +80,9 @@
 		D7C3C74C2C46D52A00C545C7 /* SSZipArchive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSZipArchive.h; sourceTree = "<group>"; };
 		D7C3C74D2C46D52A00C545C7 /* SSZipArchive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSZipArchive.m; sourceTree = "<group>"; };
 		D7C3C74E2C46D52A00C545C7 /* SSZipCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSZipCommon.h; sourceTree = "<group>"; };
+		D7C3C7642C46D67700C545C7 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
+		D7C3C7662C46D67E00C545C7 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/lib/libz.tbd; sourceTree = DEVELOPER_DIR; };
+		D7C3C7682C46D68500C545C7 /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/lib/libiconv.tbd; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +90,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D7C3C7692C46D68500C545C7 /* libiconv.tbd in Frameworks */,
+				D7C3C7672C46D67E00C545C7 /* libz.tbd in Frameworks */,
+				D7C3C7652C46D67700C545C7 /* Security.framework in Frameworks */,
 				D7C3C7292C46D4D000C545C7 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -119,6 +128,9 @@
 		D7C3C7272C46D4D000C545C7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D7C3C7682C46D68500C545C7 /* libiconv.tbd */,
+				D7C3C7662C46D67E00C545C7 /* libz.tbd */,
+				D7C3C7642C46D67700C545C7 /* Security.framework */,
 				D7C3C7282C46D4D000C545C7 /* Foundation.framework */,
 			);
 			name = Frameworks;
