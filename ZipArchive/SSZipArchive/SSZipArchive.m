@@ -25,12 +25,12 @@ BOOL _fileIsSymbolicLink(const unz_file_info *fileInfo);
 #endif
 
 @interface NSData(SSZipArchive)
-- (NSString *)_base64RFC4648 API_AVAILABLE(macos(10.9), ios(7.0), watchos(2.0), tvos(9.0));
-- (NSString *)_hexString;
+- (NSString *)_mtpc_base64RFC4648 API_AVAILABLE(macos(10.9), ios(7.0), watchos(2.0), tvos(9.0));
+- (NSString *)_mtpc_hexString;
 @end
 
 @interface NSString (SSZipArchive)
-- (NSString *)_sanitizedPath;
+- (NSString *)_mtpc_sanitizedPath;
 @end
 
 @interface SSZipArchive ()
@@ -450,7 +450,7 @@ BOOL _fileIsSymbolicLink(const unz_file_info *fileInfo);
             free(filename);
             
             // Sanitize paths in the file name.
-            strPath = [strPath _sanitizedPath];
+            strPath = [strPath _mtpc_sanitizedPath];
             if (!strPath.length) {
                 // if filename data is unsalvageable, we default to currentFileNumber
                 strPath = @(currentFileNumber).stringValue;
@@ -1179,8 +1179,8 @@ BOOL _fileIsSymbolicLink(const unz_file_info *fileInfo);
     }
     
     // if filename encoding is non-detected, we default to something based on data
-    // _hexString is more readable than _base64RFC4648 for debugging unknown encodings
-    strPath = [data _hexString];
+    // _hexString is more readable than _mtpc_base64RFC4648 for debugging unknown encodings
+    strPath = [data _mtpc_hexString];
     return strPath;
 }
 
@@ -1319,7 +1319,7 @@ BOOL _fileIsSymbolicLink(const unz_file_info *fileInfo)
 // we got those alternatives to make it compatible with filenames: https://en.wikipedia.org/wiki/Base64
 // * modified Base64 encoding for IMAP mailbox names (RFC 3501): uses '+' and ','
 // * modified Base64 for URL and filenames (RFC 4648): uses '-' and '_'
-- (NSString *)_base64RFC4648
+- (NSString *)_mtpc_base64RFC4648
 {
     NSString *strName = [self base64EncodedStringWithOptions:0];
     strName = [strName stringByReplacingOccurrencesOfString:@"+" withString:@"-"];
@@ -1330,7 +1330,7 @@ BOOL _fileIsSymbolicLink(const unz_file_info *fileInfo)
 // initWithBytesNoCopy from NSProgrammer, Jan 25 '12: https://stackoverflow.com/a/9009321/1033581
 // hexChars from Peter, Aug 19 '14: https://stackoverflow.com/a/25378464/1033581
 // not implemented as too lengthy: a potential mapping improvement from Moose, Nov 3 '15: https://stackoverflow.com/a/33501154/1033581
-- (NSString *)_hexString
+- (NSString *)_mtpc_hexString
 {
     const char *hexChars = "0123456789ABCDEF";
     NSUInteger length = self.length;
@@ -1364,7 +1364,7 @@ BOOL _fileIsSymbolicLink(const unz_file_info *fileInfo)
 // One implementation alternative would be to use the algorithm found at mz_path_resolve from https://github.com/nmoinvaz/minizip/blob/dev/mz_os.c,
 // but making sure to work with unichar values and not ascii values to avoid breaking Unicode characters containing 2E ('.') or 2F ('/') in their decomposition
 /// Sanitize path traversal characters to prevent directory backtracking. Ignoring these characters mimicks the default behavior of the Unarchiving tool on macOS.
-- (NSString *)_sanitizedPath
+- (NSString *)_mtpc_sanitizedPath
 {
     // Change Windows paths to Unix paths: https://en.wikipedia.org/wiki/Path_(computing)
     // Possible improvement: only do this if the archive was created on a non-Unix system

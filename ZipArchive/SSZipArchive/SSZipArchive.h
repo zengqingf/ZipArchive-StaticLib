@@ -24,8 +24,10 @@ typedef NS_ENUM(NSInteger, SSZipArchiveErrorCode) {
     SSZipArchiveErrorCodeInvalidArguments       = -6,
 };
 
+#define SSZipArchiveDelegate MTPCZipArchiveDelegate
 @protocol SSZipArchiveDelegate;
 
+#define SSZipArchive MTPCZipArchive
 @interface SSZipArchive : NSObject
 
 // Password check
